@@ -40,7 +40,7 @@ def balance(request, pk):
             current_total -= t.amount # if withdrawal subtract amount from balance
             table_contents.update({t: current_total}) # add transaction and total to the dictionary
     # pass account, account total balance, and transaction information to the template
-    content = {'account': account, 'table_content': table_contents, 'balance': current_total}
+    content = {'account': account, 'table_contents': table_contents, 'balance': current_total}
     return render(request, 'checkbook/BalanceSheet.html', content)
 
 # this function will render the Transaction page when requested
